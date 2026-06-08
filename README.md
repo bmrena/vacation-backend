@@ -169,3 +169,6 @@ Unit testy a integračné testy nie sú spravené.
 Unit testy by som doplnil hlavne pre service vrstvu, napríklad pre výpočet počtu dní dovolenky, vytvorenie novej dovolenky so statusom `PENDING`, zrušenie dovolenky so statusom `CANCELED`, schvaľovanie používateľom bez správnej role.
 
 Integračné testy by som doplnil pre REST endpointy, napríklad `GET /api/v1/vacation-screen?userId=1`, `POST /api/v1/vacations`
+
+<img width="1919" height="1026" alt="swagger" src="https://github.com/user-attachments/assets/1349a28b-4192-4345-8a6b-357a469d804a" />
+
