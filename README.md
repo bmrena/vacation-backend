@@ -1,10 +1,7 @@
 ## Teoretická otázka 1: Koľko služieb?
 
-Pre poskytnutie dát pre obrázok z úlohy by stačil jeden hlavný endpoint.
-
-GET /api/v1/vacation-screen?userId=1
-
-Ten vráti všetko, čo frontend potrebuje (tímy, používateľov, vybraného používateľa a jeho dovolenky).
+Keďže podľa zadania ide hlavne o zobrazenie jednej obrazovky s dovolenkami, navrhol som jeden hlavný endpoint, `GET /api/v1/vacation-screen?userId=1`,
+ktorý vráti všetky dáta potrebné pre frontend.
 
 Okrem hlavného endpointu som doplnil aj samostatné endpointy pre používateľov a dovolenky:
 ```
@@ -46,6 +43,19 @@ Aplikácia používa PostgreSQL databázu, do ktorej sa ukladajú používatelia
 
 Pre spustenie je potrebné si vytvoriť PostgreSQL databázu a nastaviť pripojenie v application.properties.
 
+## Návrhové rozhodnutia
+
+Projekt som rozdelil na vrstvy controller, service, repository, dto a mapper, aby bola oddelená REST časť, biznis logika a práca s databázou.
+
+DTO triedy používam preto, aby controller nevracal priamo entity z databázy.
+
+Pre výpočet počtu dní dovolenky používam BigDecimal, pretože dovolenka môže byť aj pol dňa.
+
+Na stav dovolenky, časť dňa a používateľské roly používam enumy.
+
+Schvaľovanie je riešené cez managerId a directorId.
+
+Žiadosť o dovolenku sa po vytvorení uloží so stavom `PENDING`. Následne ju môže schváliť manažér. Zrušená žiadosť má stav `CANCELED` a už sa nedá ďalej schvaľovať.
 ## Vzorové requesty a response
 
 Dáta pre obrazovku
