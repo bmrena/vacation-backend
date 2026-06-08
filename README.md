@@ -43,7 +43,7 @@ Aplikácia používa PostgreSQL databázu, do ktorej sa ukladajú používatelia
 
 Pre spustenie je potrebné si vytvoriť PostgreSQL databázu a nastaviť pripojenie v application.properties.
 
-## Návrhové rozhodnutia
+## Popis riešenia úlohy
 
 Projekt som rozdelil na vrstvy controller, service, repository, dto a mapper, aby bola oddelená REST časť, biznis logika a práca s databázou.
 
