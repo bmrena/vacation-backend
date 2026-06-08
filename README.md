@@ -42,7 +42,9 @@ V backend aplikácii je možné:
 
 Po spustení sa cez DataSeeder automaticky vložia ukážkové dáta.
 
-Pre spustenie je potrebné si vytvoriť PostgreSQL databázu a nastaviť pripojenie v application.properties
+Aplikácia používa PostgreSQL databázu, do ktorej sa ukladajú používatelia, ich roly a dovolenkové žiadosti.
+
+Pre spustenie je potrebné si vytvoriť PostgreSQL databázu a nastaviť pripojenie v application.properties.
 
 ## Vzorové requesty a response
 
